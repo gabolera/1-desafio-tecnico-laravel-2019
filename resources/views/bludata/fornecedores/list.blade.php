@@ -9,6 +9,18 @@
                     <span>Lista Fornecedores</span>  
                     <a class="btn btn-sm btn-success" style="float: right; color:#fff;" href="{{route('fornecedor.create')}}"> + Cadastrar novo Fornecedor</a>
                 </div>
+                <div class="card-header">
+                        <form action="{{route('fornecedor.busca')}}">
+                            <div class="row">
+                                <div class="col-10">
+                                    <input type="text" name="q" class="form-control" placeholder="Procure por Nome, CPF ou CNPJ">
+                                </div>
+                                <div class="col-2" style="float:right">
+                                    <button type="submit" class="btn btn-primary">Pesquisar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
 
                 <div class="card-body">
                     <table class="table">

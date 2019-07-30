@@ -83,3 +83,8 @@ Route::get('/fornecedores/{id}/delete', [
     'uses' => 'Bludata\FornecedorController@destroy',
     'as' => 'fornecedor.destroy'
 ]);
+
+Route::get('/fornecedores/search', [
+    'uses' => 'Bludata\FornecedorController@busca',
+    'as' => 'fornecedor.busca'
+]);

@@ -104,4 +104,11 @@ class FornecedorController extends Controller
     {
         //
     }
+
+    public function busca(request $request)
+    {
+        $pesquisa = $request->q;
+        $dados = Fornecedor::where('nome', 'LIKE', '%'.$pesquisa.'%')->orwhere('cpfj', 'LIKE', '%'.$pesquisa.'%')->get();
+        return view('bludata.fornecedores.list')->with(['dados' => $dados]);
+    }
 }
