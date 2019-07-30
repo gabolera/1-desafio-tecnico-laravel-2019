@@ -21,7 +21,12 @@ class CreateFornecedoresTable extends Migration
             $table->integer('empresa_id')->unsigned();
             $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade');
             $table->decimal('RG', 14,0)->nullable();
+
+            /* O IDEAL SERIA USAR O CAMPO JSON, MAS A VERSÃO DO MEU BANCO DE DADOS, NÃO PERITE,
+             * E COMO ESTOU USANDO UMA VERSÃO INSTÁVEL DO LINUX, NÃO É TÃO SIMPLES DE ATUALIZAR.
+             */
             $table->longText('telefone')->nullable();
+
             $table->timestamps();
         });
     }
