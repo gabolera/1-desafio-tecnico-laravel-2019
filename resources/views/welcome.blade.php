@@ -62,8 +62,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">GitHub Project</a>
-                    <a href="https://blog.laravel.com">Gabriel Andreazza</a>
+                    <a href="https://github.com/dshy1/Laravel-Challenge">GitHub Project</a>
+                    <a href="#">Gabriel Andreazza</a>
                 </div>
             </div>
         </div>

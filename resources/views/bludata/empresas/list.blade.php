@@ -27,6 +27,7 @@
                                 UF
                             </th>
                             <th>
+                                Cadastrado em
                             </th>
                         <th>
                                 Ações
@@ -48,7 +49,7 @@
                                 <td>
                                     {{$dado->UF}}
                                 </td>
-                                <td></td>
+                                <td>{{ date("d-m-Y", strtotime($dado->created_at))}}</td>
                                 <td style="">
                                     {{-- <a href="{{route('empresa.edit', $dado->id)}}" class="btn btn-sm btn-primary">Visualizar</a> --}}
                                     <a href="{{route('empresa.edit', $dado->id)}}" class="btn btn-sm" style="background-color:#ffa600; color:#fff;">Editar</a>
