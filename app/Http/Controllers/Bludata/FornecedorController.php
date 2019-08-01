@@ -46,6 +46,7 @@ class FornecedorController extends Controller
             $dados->cpfj = $request->cpfj;
             $dados->RG = $request->RG;
             $dados->nome = $request->nome;
+            $dados->nasc = $request->nasc;
             $dados->telefone = json_encode($request->array);
             $dados->save();
         }else{

@@ -70,7 +70,11 @@
                         <div class="nasc">
                             <div class="form-group">
                                 <label for="">Data Nascimento</label>
-                                <input type="date" class="form-control" name="nasc" id="">
+                                @php if(isset($dados->nasc)){
+                                    echo '<p><strong>' . date("d-m-Y", strtotime($dados->nasc)). '</strong></p>';
+                                }else{
+                                    echo '<input type="date" class="form-control" name="nasc" id="data"';
+                                } @endphp
                                 <label for="">RG</label>
                                 <input type="number" class="form-control" name="RG" value="{{isset($dados->RG) ? $dados->RG : '' }}">
                             </div>
@@ -165,6 +169,9 @@ $(document).ready(function () {
     $("table.order-list").on("click", ".ibtnDel", function (event) {
         $(this).closest("tr").remove();
     });
+});
+$(document).ready(function (){
+    $("#data").val('{{isset($dados->nasc) ? $dados->nasc : '' }}')
 });
 </script>
 @endsection
