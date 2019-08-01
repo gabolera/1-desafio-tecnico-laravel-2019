@@ -9,7 +9,8 @@
                     <span>Lista Fornecedores</span>  
                     <a class="btn btn-sm btn-success" style="float: right; color:#fff;" href="{{route('fornecedor.create')}}"> + Cadastrar novo Fornecedor</a>
                 </div>
-                <div class="card-header">
+
+                {{-- <div class="card-header">
                         <form action="{{route('fornecedor.busca')}}">
                             <div class="row">
                                 <div class="col-10">
@@ -20,12 +21,15 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div> --}}
 
                 <div class="card-body">
                     <table id="example" class="display table">
                         <thead>
                         <tr>
+                            <th>
+                                ID
+                            </th>
                             <th>
                                 Nome Fornecedor
                             </th>
@@ -49,6 +53,9 @@
                         <tbody>
                             @foreach ($dados as $dado)
                             <tr>
+                                <td>
+                                    {{$dado->id}}
+                                </td>
                                 <td>
                                     {{$dado->nome}}
                                 </td>
@@ -85,7 +92,7 @@
 <script>
 
 $('#example').dataTable( {
-  "searching": false,
+  "order": [[ 0, "desc" ]],
   "pageLength": 50,
 } );
 

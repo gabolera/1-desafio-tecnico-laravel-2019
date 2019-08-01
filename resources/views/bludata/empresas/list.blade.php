@@ -15,6 +15,9 @@
                         <thead>
                         <tr>
                             <th>
+                                ID
+                            </th>
+                            <th>
                                 Nome
                             </th>
                             <th>
@@ -33,6 +36,9 @@
                         <tbody>
                             @foreach ($dados as $dado)
                             <tr>
+                                <td>
+                                    {{$dado->id}}
+                                </td>
                                 <td>
                                     {{$dado->nome}}
                                 </td>
@@ -63,7 +69,7 @@
 <script>
 
 $('#example').dataTable( {
-  "searching": false,
+  "order": [[ 0, "desc" ]],
   "pageLength": 50,
 } );
 
