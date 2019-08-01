@@ -72,7 +72,7 @@
                                     {{ date("d-m-Y", strtotime($dado->created_at)) }}
                                 </td>
                                 <td>
-                                    <a href="{{route('fornecedor.edit', $dado->id)}}" class="btn btn-sm btn-primary">Visualizar</a>                                    
+                                    {{-- <a href="{{route('fornecedor.edit', $dado->id)}}" class="btn btn-sm btn-primary">Visualizar</a>                                     --}}
                                     <a href="{{route('fornecedor.edit', $dado->id)}}" class="btn btn-sm" style="background-color:#ffa600; color:#fff;">Editar</a>
                                     <a href="{{route('fornecedor.destroy', $dado->id)}}" class="btn btn-sm btn-danger">Deletar</a>
                                 </td>

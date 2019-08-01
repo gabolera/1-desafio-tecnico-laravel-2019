@@ -50,7 +50,7 @@ class FornecedorController extends Controller
             $dados->save();
         }else{
             $erro = 'USUÁRIO MENOR DE IDADE PARA ESSE ESTADO';
-            return redirect()->route('')->with(['erro' => $erro]);
+            return redirect()->route('fornecedor.index')->with(['erro' => $erro]);
         }
         return redirect()->route('fornecedor.index');
     }
@@ -102,7 +102,9 @@ class FornecedorController extends Controller
 
     public function destroy($id)
     {
-        //
+        $dados = Fornecedor::find($id);
+        $dados->delete();
+        return redirect()->route('fornecedor.index');
     }
 
     public function busca(request $request)

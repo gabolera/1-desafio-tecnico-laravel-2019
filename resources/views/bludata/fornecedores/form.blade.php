@@ -32,14 +32,35 @@
                         </div>
                         <div class="form-group">
                             <div class="form-check-inline">
-                                    <input class="form-check-input" type="radio" name="is_cnpj" id="Radios1" value="1" checked/>
+                                    <input class="form-check-input" type="radio" name="is_cnpj" id="Radios1" value="1"  
+                                    @php 
+                                    if(isset($dados->is_cnpj)){
+                                        if($dados->is_cnpj == 1){
+                                            echo 'checked';
+                                        }else{
+                                        }
+                                    }
+                                    else{
+                                        echo 'checked';
+                                    } 
+                                    @endphp />
                                     <label class="form-check-label" for="Radios1">
                                         CNPJ
                                     </label>
                                 </div>
                             
                                 <div class="form-check-inline">
-                                    <input class="form-check-input" type="radio" name="is_cnpj" id="Radios2" value="0"/>
+                                    <input class="form-check-input" type="radio" name="is_cnpj" id="Radios2" value="0" 
+                                    @php 
+                                    if(isset($dados->is_cnpj)){
+                                        if($dados->is_cnpj == 1){
+                                        }else{
+                                            echo 'checked';
+                                        }
+                                    }else{} 
+                                    @endphp/>
+
+
                                     <label class="form-check-label" for="Radios2">
                                         CPF
                                     </label>
@@ -51,7 +72,7 @@
                                 <label for="">Data Nascimento</label>
                                 <input type="date" class="form-control" name="nasc" id="">
                                 <label for="">RG</label>
-                                <input type="number" class="form-control" name="RG">
+                                <input type="number" class="form-control" name="RG" value="{{isset($dados->RG) ? $dados->RG : '' }}">
                             </div>
                         </div>
                         <table id="myTable" class="table order-list card-table table-vcenter text-nowrap">

@@ -50,7 +50,7 @@
                                 </td>
                                 <td></td>
                                 <td style="">
-                                    <a href="{{route('empresa.edit', $dado->id)}}" class="btn btn-sm btn-primary">Visualizar</a>
+                                    {{-- <a href="{{route('empresa.edit', $dado->id)}}" class="btn btn-sm btn-primary">Visualizar</a> --}}
                                     <a href="{{route('empresa.edit', $dado->id)}}" class="btn btn-sm" style="background-color:#ffa600; color:#fff;">Editar</a>
                                     <a href="{{route('empresa.destroy', $dado->id)}}" class="btn btn-sm btn-danger">Deletar</a>
                                 </td>
