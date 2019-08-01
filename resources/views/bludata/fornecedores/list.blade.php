@@ -23,7 +23,7 @@
                     </div>
 
                 <div class="card-body">
-                    <table class="table">
+                    <table id="example" class="display table">
                         <thead>
                         <tr>
                             <th>
@@ -36,11 +36,14 @@
                                 Nome Empresa
                             </th>
                             <th>
-                                    UF
-                                </th>
-                                <th>
-                                        Ações
-                                    </th>
+                                UF
+                            </th>
+                            <th>
+                                Data Cadastro
+                            </th>
+                            <th>
+                                Ações
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -59,6 +62,9 @@
                                     {{$dado->empresa->UF}}
                                 </td>
                                 <td>
+                                    {{ date("d-m-Y", strtotime($dado->created_at)) }}
+                                </td>
+                                <td>
                                     <a href="{{route('fornecedor.edit', $dado->id)}}" class="btn btn-sm btn-primary">Visualizar</a>                                    
                                     <a href="{{route('fornecedor.edit', $dado->id)}}" class="btn btn-sm" style="background-color:#ffa600; color:#fff;">Editar</a>
                                     <a href="{{route('fornecedor.destroy', $dado->id)}}" class="btn btn-sm btn-danger">Deletar</a>
@@ -72,4 +78,16 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('scripts')
+<script>
+
+$('#example').dataTable( {
+  "searching": false,
+  "pageLength": 50,
+} );
+
+</script>
 @endsection

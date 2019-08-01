@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table" id="example">
                         <thead>
                         <tr>
                             <th>
@@ -57,4 +57,15 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+
+$('#example').dataTable( {
+  "searching": false,
+  "pageLength": 50,
+} );
+
+</script>
 @endsection
