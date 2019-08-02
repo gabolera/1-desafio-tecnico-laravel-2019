@@ -1,5 +1,4 @@
 # Laravel-Challenge
-Bludata Laravel Challenge
 
 ## Enunciado do teste:
 Criar uma listagem de fornecedores relacionado a uma empresa;
